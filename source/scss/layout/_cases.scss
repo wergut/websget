@@ -1,0 +1,23 @@
+.cases-section-main {
+
+  .case-item {
+    margin-bottom: 50px;
+    &:after {
+      content: "";
+      display: block;
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      margin-top: 50px;
+      height: 2px;
+      background-color: $--color-grey-dark;
+    }
+
+    &:last-of-type {
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+}

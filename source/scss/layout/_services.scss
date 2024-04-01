@@ -1,0 +1,34 @@
+.services-section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../img/seo-text-back.png);
+  background-color: #EBEBEB;
+  background-blend-mode: multiply;
+
+  .h2 {
+    text-align: center;
+  }
+
+  .service-card {
+    padding: 40px;
+    background-color: $--color-white;
+    height: calc(100% - 40px);
+    margin-bottom: 40px;
+
+    .card-info {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        margin-right: 15px;
+      }
+      .card-price {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+        color: $--color-black;
+      }
+    }
+  }
+}

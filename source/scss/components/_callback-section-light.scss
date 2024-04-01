@@ -1,0 +1,56 @@
+.callback-section-light {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../img/seo-text-back.png);
+  background-color: #EBEBEB;
+  background-blend-mode: multiply;
+  padding: 34px 0 70px;
+
+  .callback-block-wrapper {
+
+    &:nth-of-type(1) {
+      width: 45%;
+      padding: 56px 0 70px;
+    }
+    &:nth-of-type(2) {
+      width: 55%;
+    }
+  }
+
+  .h2 {
+    margin-bottom: 25px;
+  }
+
+  .form-wrapper {
+
+    .form-description {
+      margin-bottom: 35px;
+
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 26px;
+        color: $--color-grey-dark;
+      }
+    }
+    .form-policy {
+      max-width: 75%;
+    }
+  }
+
+  .contact-block {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    .contact-block-title {
+      font-family: $--font-title;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 26px;
+      margin-right: 24px;
+      max-width: 224px;
+    }
+
+  }
+}

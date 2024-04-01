@@ -1,0 +1,38 @@
+.section-404 {
+
+  .wrapper {
+    max-width: 580px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .image-wrapper {
+    margin-bottom: 25px;
+
+    img {
+      width: 169px;
+      height: 169px;
+      object-fit: contain;
+    }
+  }
+  .description {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+    color: $--color-grey-dark;
+
+  }
+  .btn {
+    box-shadow: 0 5px 5px 0 #E8E8E8;
+    width: 182px;
+  }
+}

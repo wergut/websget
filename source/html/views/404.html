@@ -1,0 +1,31 @@
+<!--header.html-->
+<%= _.template(require('../includes/common/header.html').default)({}) %>
+
+<section class="section-404">
+  <div class="container">
+    <div class="lines-background">
+      <div class="lines-wrapper">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="image-wrapper">
+        <img src="./img/image-404.png" alt="">
+      </div>
+      <h1>Ой, у нас нет такой страницы</h1>
+      <div class="description">
+        Зато есть много других
+      </div>
+      <a href="/" class="btn btn-red">Вернуться на сайт</a>
+    </div>
+  </div>
+</section>
+
+<!--footer.html-->
+<%= _.template(require('../includes/common/footer.html').default)({}) %>

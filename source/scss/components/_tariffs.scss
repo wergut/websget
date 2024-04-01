@@ -1,0 +1,127 @@
+.tariffs-section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-image: url(../img/seo-text-back.png);
+  background-color: $--color-light-grey;
+
+  .h2 {
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .col-lg-4:nth-of-type(2) {
+    .tariff-card {
+      .tariff-card-title {
+        background-color: $--color-black;
+        color: $--color-white;
+      }
+    }
+  }
+
+  .tariff-card {
+    background-color: $--color-white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 573px;
+    justify-content: space-between;
+    box-shadow: 0 15px 15px 0 #E8E8E8;
+
+
+    ul {
+      margin: 20px 0;
+      padding: 0 40px;
+
+      li {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        color: $--color-grey-dark;
+        display: flex;
+        align-items: flex-start;
+
+        &:not(:last-of-type) {
+          margin-bottom: 20px;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+          width: 8px;
+          min-width: 8px;
+          height: 8px;
+          background-color: $--color-gold;
+          transform: rotate(45deg);
+          margin-right: 10px;
+          margin-top: 4px;
+        }
+      }
+    }
+
+    .tariff-card-info {
+      padding: 0 40px 40px;
+    }
+
+    .tariff-card-title {
+      margin-bottom: 20px;
+      font-family: $--font-title;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 34px;
+      text-align: center;
+      border: 1px solid $--color-black-dark;
+      color: $--color-black;
+      padding: 14px;
+    }
+
+    .tariff-card-subtitle {
+      padding: 0 40px;
+      font-family: $--font-title;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .tariff-card-prices {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+
+      .tariff-price-old, .tariff-price-current {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .tariff-price-old {
+        color: $--color-red;
+        font-weight: 300;
+        position: relative;
+        width: fit-content;
+        margin-right: 12px;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 0.5px;
+          background-color: $--color-red;
+          position: absolute;
+          bottom: 10px;
+        }
+      }
+      .tariff-price-current {
+        color: $--color-black;
+        font-weight: 500;
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+}

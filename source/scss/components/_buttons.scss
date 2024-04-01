@@ -1,0 +1,70 @@
+button {
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: fit-content;
+  padding: 0 20px;
+  transition: 0.3s;
+}
+
+.btn-red {
+  font-size: 16px;
+  font-weight: 700;
+  color: $--color-white;
+  background-color: $--color-red;
+  box-shadow: 0 5px 5px 0 #E8E8E8;
+
+  &:hover {
+    background-color: #b7363f;
+  }
+}
+
+.btn-bordered {
+  border: 1px solid $--color-red;
+  font-size: 16px;
+  font-weight: 700;
+  color: $--color-red;
+
+  &:hover {
+    background-color: $--color-red;
+    color: $--color-white;
+  }
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  background-image: url(../img/icons/swiper-button-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $--color-black;
+  bottom: 0;
+  top: unset;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  cursor: not-allowed;
+}
+
+.swiper-button-next {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev {
+  left: unset;
+  right: 65px;
+}
+

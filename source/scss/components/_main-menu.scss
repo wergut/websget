@@ -1,0 +1,31 @@
+.main-menu {
+
+  ul {
+    margin: 0;
+
+    li {
+
+      a {
+        font-size: 16px;
+        font-weight: 500;
+        color: $--color-grey-dark;
+      }
+    }
+    .menu-item-has-children {
+
+      > ul {
+        display: none;
+      }
+    }
+  }
+
+
+  > ul {
+    display: flex;
+    align-items: center;
+
+    li + li {
+      margin-left: 16px;
+    }
+  }
+}
