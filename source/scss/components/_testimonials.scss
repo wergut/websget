@@ -1,11 +1,23 @@
-.testimonials-section {
-
-}
-
 .testimonials-slider {
   max-width: 100%;
   position: relative;
   overflow: hidden;
   width: 100%;
   padding-bottom: 90px;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-section {
+    overflow: hidden;
+  }
+  .testimonials-slider {
+    overflow: initial;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .testimonials-slider {
+    padding-bottom: 72px;
+  }
 }

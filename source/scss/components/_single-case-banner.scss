@@ -1,0 +1,96 @@
+.single-case-banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../img/seo-text-back.png);
+  background-color: #EBEBEB;
+  background-blend-mode: multiply;
+  padding-top: 188px;
+
+  .case-banner-cards {
+    margin-top: 40px;
+
+    .case-banner-card {
+      padding: 24px;
+      background-color: $--color-white;
+      box-shadow: 0 15px 15px 0 #E8E8E8;
+      display: flex;
+      height: 100%;
+
+      .banner-card-ico {
+        margin-right: 15px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          min-width: 50px;
+          object-fit: contain;
+        }
+      }
+      .banner-card-title {
+        font-family: $--font-title;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: $--color-black;
+        margin-bottom: 10px;
+      }
+      .banner-card-description {
+
+        p {
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 21px;
+          color: $--color-grey-dark;
+        }
+      }
+
+    }
+
+    .case-banner-card:has(.banner-card-stats) {
+      display: block;
+
+      .banner-card-wrapper {
+        display: flex;
+      }
+
+      .banner-card-stats {
+        margin: 0 -7.5px;
+        width: calc(100% + 15px);
+        border-top: 1px solid $--color-grey-dark;
+        margin-top: 12px;
+        padding-top: 12px;
+        display: flex;
+        justify-content: center;
+
+        .card-stats-item {
+          padding: 0 7.5px;
+
+          span {
+            display: block;
+            text-align: center;
+
+            &:nth-of-type(1) {
+              font-family: $--font-title;
+              font-size: 16px;
+              font-weight: 800;
+              line-height: 19px;
+              color: $--color-gold;
+              margin-bottom: 8px;
+            }
+
+            &:nth-of-type(2) {
+              font-size: 13px;
+              font-weight: 500;
+              line-height: 16px;
+              color: $--color-black;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+
+}

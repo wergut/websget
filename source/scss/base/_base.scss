@@ -22,6 +22,52 @@ section:has(.lines-background) {
   position: relative;
 }
 
+.table-wrapper {
+  padding: 30px 40px 45px;
+  background-color: $--color-white;
+
+  .table-title {
+    font-family: $--font-title;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 19px;
+    color: $--color-black;
+    margin-bottom: 16px;
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    tr {
+
+      td {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        color: $--color-grey-dark;
+        padding: 8px 16px;
+        border: 1px solid $--color-light-grey;
+        border-spacing: 0;
+      }
+
+      &:nth-of-type(1) {
+        td {
+          font-weight: 500;
+          color: $--color-black;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 18px;
+    width: 247px;
+    font-size: 14px;
+  }
+
+}
+
 .filters-block {
   display: flex;
   flex-wrap: wrap;
@@ -148,9 +194,8 @@ section:has(.lines-background) {
   color: $--color-black;
 
   a {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 19px;
+    font-size: inherit;
+    line-height: inherit;
     color: $--color-blue;
     text-decoration: underline;
   }
@@ -159,6 +204,7 @@ section:has(.lines-background) {
 .testimonial-card {
   padding: 30px;
   background-color: $--color-light-grey;
+  box-shadow: 0 15px 15px 0 #E8E8E8;
 
   .card-content {
     display: flex;
@@ -253,4 +299,54 @@ section:has(.lines-background) {
     width: 100%;
     margin-top: 15px;
   }
+}
+
+@media (max-width: 1024px) {
+  .card-wrapper {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  section {
+    padding: 60px 0;
+  }
+
+  .form-policy  {
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .social-links a img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .lines-background {
+
+    .lines-wrapper {
+      max-width: 60%;
+    }
+
+    .line {
+
+      &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
+        display: none;
+      }
+    }
+  }
+
+  .testimonial-card {
+    padding: 24px;
+
+    .card-description  {
+
+      p {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
 }

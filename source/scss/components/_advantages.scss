@@ -11,3 +11,14 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .advantages-section {
+    .advantage-card {
+      .h4 {
+        font-size: 22px;
+        line-height: 26px;
+      }
+    }
+  }
+}

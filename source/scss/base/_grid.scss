@@ -3,7 +3,7 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1248px;
+  max-width: 1246px;
   width: 100%;
   padding: 0 24px;
 }
@@ -127,6 +127,12 @@
   }
   .t-d-none {
     display: none;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    padding: 0 75px;
   }
 }
 
