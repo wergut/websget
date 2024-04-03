@@ -38,3 +38,42 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .seo-section {
+
+    .card-wrapper {
+      height: initial;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .seo-section {
+
+    .card-wrapper {
+      padding: 24px;
+
+      .card-wrapper-ico {
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .card-wrapper-title {
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      .card-wrapper-description  {
+
+        p {
+          font-size: 15px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+}

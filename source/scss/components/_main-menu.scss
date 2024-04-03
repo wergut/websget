@@ -9,6 +9,10 @@
         font-size: 16px;
         font-weight: 500;
         color: $--color-grey-dark;
+
+        &:hover {
+          color: $--color-gold;
+        }
       }
     }
     .menu-item-has-children {

@@ -43,3 +43,22 @@
   width: 100%;
   padding-bottom: 90px;
 }
+
+@media (max-width: 600px) {
+
+  .our-team {
+    overflow: hidden;
+
+    .staff-card {
+      padding: 24px;
+      .staff-image img {
+        height: 199px;
+      }
+    }
+  }
+
+  .staff-slider {
+    overflow: initial;
+    padding-bottom: 67px;
+  }
+}

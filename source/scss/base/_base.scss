@@ -175,6 +175,10 @@ section:has(.lines-background) {
   a {
     display: block;
 
+    &:hover {
+      opacity: 0.7;
+    }
+
     img {
       width: 20px;
       height: 20px;
@@ -253,9 +257,12 @@ section:has(.lines-background) {
   background-image: url(../img/seo-text-back.png);
   background-color: $--color-light-grey;
   background-blend-mode: multiply;
+  padding-bottom: 0;
+
   .h2 {
     margin-bottom: 100px;
   }
+
 }
 
 .custom-card {
@@ -273,10 +280,11 @@ section:has(.lines-background) {
     color: $--color-white;
     padding: 8px 17px;
     background-color: $--color-black;
-    position: absolute;
     height: 50px;
-    top: -50px;
-    left: 0;
+    width: fit-content;
+    margin-top: -90px;
+    margin-left: -40px;
+    margin-bottom: 40px;
   }
   .custom-card-title {
     font-family: $--font-title;
@@ -305,6 +313,38 @@ section:has(.lines-background) {
   .card-wrapper {
     margin-bottom: 32px;
   }
+
+  .custom-card {
+    padding: 30px;
+
+    .custom-card-title {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    .custom-card-number {
+      margin-left: -30px;
+      margin-top: -80px;
+      margin-bottom: 30px;
+    }
+
+  }
+
+  .filters-block {
+
+    .filter {
+      margin-bottom: 20px;
+
+      span {
+        padding: 12px 16px;
+      }
+    }
+  }
+
+  .table-wrapper {
+    padding: 30px;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -345,6 +385,76 @@ section:has(.lines-background) {
       p {
         font-size: 16px;
         line-height: 22px;
+      }
+    }
+  }
+
+  .card-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .custom-cards-section  {
+    padding-bottom: 60px;
+
+    .col-lg-4:last-of-type {
+
+      .custom-card {
+        margin-bottom: 0;
+      }
+    }
+
+    .h2 {
+      margin-bottom: 75px;
+    }
+  }
+
+  .custom-card {
+    padding: 24px;
+    height: initial;
+    margin-bottom: 67px;
+
+    .custom-card-title {
+      margin-bottom: 10px;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    .custom-card-description  {
+
+      p {
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+
+    .btn {
+      margin-top: 10px;
+    }
+
+    .custom-card-number {
+      height: 43px;
+      font-size: 22px;
+      line-height: 26px;
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -24px;
+      margin-top: -68px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .filters-block {
+    margin: 0 -8px 24px;
+    width: calc(100% + 16px);
+
+    .filter {
+      padding: 0 8px;
+      margin-bottom: 16px;
+
+      span {
+        padding: 12px 16px;
       }
     }
   }

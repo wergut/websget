@@ -95,6 +95,7 @@
             display: block;
             width: 8px;
             height: 8px;
+            min-width: 8px;
             background-color: $--color-gold;
             transform: rotate(45deg);
             margin-right: 10px;
@@ -125,16 +126,42 @@
 }
 
 @media (max-width: 600px) {
-  .accordion .accordion-item .accordion-item-header {
-    padding: 34px 50px 34px 20px;
-    font-size: 18px;
-    position: relative;
-    &:after {
-      position: absolute;
-      right: 24px;
+  .accordion  {
+
+    .accordion-item {
+      padding: 0 16px;
+
+      .accordion-item-header {
+        padding: 16px 31px 16px 0;
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      .accordion-item-inner {
+        padding: 0 0 24px;
+      }
+
+      .accordion-item-content  {
+
+        p {
+          font-size: 15px;
+          line-height: 21px;
+        }
+
+        ul {
+
+          li {
+            font-size: 15px;
+            line-height: 18px;
+          }
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+      }
+
     }
-  }
-  .accordion .accordion-item .accordion-item-content .accordion-content-wrapper {
-    padding: 0 20px 30px;
   }
 }

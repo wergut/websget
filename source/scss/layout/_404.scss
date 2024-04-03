@@ -36,3 +36,27 @@
     width: 182px;
   }
 }
+
+@media (max-width: 600px) {
+  .section-404 {
+    padding: 80px 0 90px;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .image-wrapper {
+      margin-bottom: 32px;
+    }
+  }
+}

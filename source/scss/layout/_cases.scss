@@ -21,3 +21,18 @@
   }
 
 }
+
+@media (max-width: 600px) {
+  .cases-section-main  {
+
+    .case-item {
+      margin-bottom: 40px;
+
+      &:after {
+        margin-top: 32px;
+        margin-left: 12px;
+        width: calc(100% - 24px);
+      }
+    }
+  }
+}

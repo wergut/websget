@@ -94,3 +94,9 @@
   }
 
 }
+
+@media (max-width: 1024px) {
+  .single-case-banner .case-banner-cards .col-md-6:last-of-type {
+    margin-top: 24px;
+  }
+}

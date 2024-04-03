@@ -125,3 +125,54 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .tariffs-section {
+
+    .col-md-12 {
+
+      &:not(:last-of-type) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .tariffs-section {
+
+    .tariff-card {
+      min-height: initial;
+
+      .tariff-card-title {
+        font-size: 24px;
+        line-height: 29px;
+      }
+
+      .tariff-card-subtitle {
+        padding: 0 24px;
+      }
+
+      .tariff-card-info {
+        padding: 0 24px 24px;
+      }
+
+      ul  {
+        margin: 20px 0 32px;
+        padding: 0 24px;
+
+        li {
+          font-size: 15px;
+          line-height: 18px;
+        }
+      }
+
+      .btn-red {
+        background-color: transparent;
+        border: 1px solid $--color-red;
+        color: $--color-red;
+      }
+
+    }
+  }
+}

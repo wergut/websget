@@ -70,3 +70,66 @@
 
 }
 
+@media (max-width: 1024px) {
+  .about {
+    .about-cards-wrapper {
+
+      .about-card {
+        margin-bottom: 40px;
+        height: initial;
+      }
+    }
+  }
+
+  .about .about-cards-wrapper .col-lg-6:nth-of-type(3) .about-card,
+  .about .about-cards-wrapper .col-lg-6:nth-of-type(4) .about-card {
+    height: initial;
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .about {
+
+    .about-cards-wrapper {
+      margin-bottom: 8px;
+
+      .about-card {
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .col-m-12 {
+      &:nth-of-type(2) {
+        order: -1;
+      }
+      &:nth-of-type(3) {
+        order: 2;
+      }
+      &:nth-of-type(4) {
+        order: 1;
+      }
+    }
+
+    .about-content {
+
+      blockquote {
+        padding: 25px 30px;
+        font-size: 18px;
+        line-height: 23px;
+        margin-bottom: 24px;
+      }
+
+      .about-image {
+
+        img {
+          height: 236px;
+        }
+      }
+
+    }
+
+  }
+}

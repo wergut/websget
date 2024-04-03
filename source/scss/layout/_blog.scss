@@ -5,6 +5,8 @@
     padding: 30px;
     margin-bottom: 40px;
     height: calc(100% - 40px);
+    box-shadow: 0 15px 15px 0 #E8E8E8;
+
     .blog-card-tags {
       margin: 0 -5px;
       width: calc(100% + 10px);
@@ -58,6 +60,18 @@
         background-color: $--color-black;
         color: $--color-white;
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .blog {
+    padding-bottom: 36px;
+
+    .blog-card {
+      padding: 24px;
+      margin-bottom: 24px;
+      height: initial;
     }
   }
 }

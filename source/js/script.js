@@ -55,6 +55,22 @@ var swiper3 = new Swiper(".staff-slider", {
     nextEl: ".staff-slider .swiper-button-next",
     prevEl: ".staff-slider .swiper-button-prev",
   },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 12,
+    },
+    // when window width is >= 480px
+    601: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+  }
 });
 
 
@@ -145,3 +161,58 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+google.charts.load("current", {packages:['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ["Element", "Density", { role: "style" } ],
+    ["Copper", 11, "#698BD6"],
+    ["Silver", 105, "#D6B469"],
+    ["Gold", 34, "#698BD6"],
+    ["Platinum", 98, "color: #D6B469"]
+  ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+    { calc: "stringify",
+      sourceColumn: 1,
+      type: "string",
+      role: "annotation" },
+    2]);
+
+  var options = {
+    width: 600,
+    height: 246,
+    bar: {groupWidth: 70},
+    legend: { position: "none" },
+    hAxis: { textPosition: 'none', gridlines: { count: 0 } },
+    vAxis: { textPosition: 'none', gridlines: { count: 0 } },
+    annotations: { textStyle: { fontSize: 16 } },
+    chartArea: { borderWidth: 0 }
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+  chart.draw(view, options);
+}
+
+
+
+window.onload = function() {
+  const bars = document.querySelectorAll('.bar');
+  let maxValue = 0;
+
+  bars.forEach(bar => {
+    const value = parseFloat(bar.nextElementSibling.getAttribute('data-value'));
+    if (value > maxValue) {
+      maxValue = value;
+    }
+  });
+
+  bars.forEach(bar => {
+    const value = parseFloat(bar.nextElementSibling.getAttribute('data-value'));
+    const height = (value / maxValue) * 100;
+    bar.style.height = height + '%';
+    bar.nextElementSibling.innerText = value;
+  });
+}

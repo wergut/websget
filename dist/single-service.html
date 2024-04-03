@@ -200,7 +200,7 @@
     </div>
     <div class="h2">Что дает SEO бизнесу</div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-m-12">
+      <div class="col-lg-4 col-md-12 col-m-12">
         <div class="card-wrapper">
           <div class="card-wrapper-ico">
             <img src="./img/icons/seo-ico.svg" alt="">
@@ -211,7 +211,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-m-12">
+      <div class="col-lg-4 col-md-12 col-m-12">
         <div class="card-wrapper">
           <div class="card-wrapper-ico">
             <img src="./img/icons/seo-ico1.svg" alt="">
@@ -222,7 +222,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-m-12">
+      <div class="col-lg-4 col-md-12 col-m-12">
         <div class="card-wrapper">
           <div class="card-wrapper-ico">
             <img src="./img/icons/seo-ico2.svg" alt="">
@@ -241,7 +241,7 @@
   <div class="container">
     <div class="h2">Тарифы на продвижение сайта</div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-m-12">
+      <div class="col-lg-4 col-md-12 col-m-12">
         <div class="tariff-card">
           <div class="tariff-card-content">
             <div class="tariff-card-title">Яндекс</div>
@@ -261,7 +261,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-m-12">
+      <div class="col-lg-4 col-md-12 col-m-12">
         <div class="tariff-card">
           <div class="tariff-card-content">
             <div class="tariff-card-title">Яндекс + Google</div>
@@ -284,7 +284,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-m-12">
+      <div class="col-lg-4 col-md-12 col-m-12">
         <div class="tariff-card">
           <div class="tariff-card-content">
             <div class="tariff-card-title">Яндекс</div>
@@ -354,7 +354,30 @@
               </div>
               <a href="#" class="btn btn-red">Читать кейс</a>
             </div>
-            <div class="col-lg-6 col-md-12 col-m-12"></div>
+            <div class="col-lg-6 col-md-12 col-m-12">
+              <div class="wrapper">
+                <div class="chart-left chart-wrapper">
+                  <div class="chart">
+                    <div class="bar" id="bar1"></div>
+                    <span class="label" id="label1" data-value="11"></span>
+                  </div>
+                  <div class="chart">
+                    <div class="bar" id="bar2"></div>
+                    <span class="label" id="label2" data-value="105"></span>
+                  </div>
+                </div>
+                <div class="chart-right chart-wrapper">
+                  <div class="chart">
+                    <div class="bar" id="bar3"></div>
+                    <span class="label" id="label3" data-value="34"></span>
+                  </div>
+                  <div class="chart">
+                    <div class="bar" id="bar4"></div>
+                    <span class="label" id="label4" data-value="98"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="swiper-slide">
@@ -387,7 +410,9 @@
               </div>
               <a href="#" class="btn btn-red">Читать кейс</a>
             </div>
-            <div class="col-lg-6 col-md-12 col-m-12"></div>
+            <div class="col-lg-6 col-md-12 col-m-12">
+
+            </div>
           </div>
         </div>
       </div>
@@ -398,6 +423,9 @@
     </div>
   </div>
 </section>
+
+
+
 
 
 <section class="callback-section-dark">
@@ -509,10 +537,13 @@
         <div class="description">
           <p>Заполните всего 6 пунктов онлайн-калькулятора и получите скидку в размере 10% на ежемесячный платеж. Экономия до <strong>100 000 рублей</strong> в год.</p>
         </div>
+        <div class="image-wrapper image-wrapper-mobile">
+          <img src="./img/calc-image.png" alt="">
+        </div>
         <form action=""></form>
       </div>
       <div class="calculator-block-wrapper">
-        <div class="image-wrapper">
+        <div class="image-wrapper image-wrapper-pc">
           <img src="./img/calc-image.png" alt="">
         </div>
       </div>
@@ -784,6 +815,17 @@
 
 <section class="content-section">
   <div class="container">
+    <div class="lines-background">
+      <div class="lines-wrapper">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
     <div class="content-wrapper">
       <div class="h2">SEO продвижение сайта</div>
       <div class="image-wrapper">
@@ -853,9 +895,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-6 col-m-12">
-        <div class="footer-logo">
+        <a href="/" class="footer-logo">
           <img src="./img/header-logo.svg" alt="">
-        </div>
+        </a>
         <div class="footer-payment-partners">
           <img src="./img/icons/mastercard.svg" alt="">
           <img src="./img/icons/visa.svg" alt="">
@@ -945,8 +987,10 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </body>
 </html>
