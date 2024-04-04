@@ -32,6 +32,7 @@ var swiper2 = new Swiper(".cases-slider", {
   observeSlideChildren: true,
   slidesPerView: 1,
   spaceBetween: 40,
+  allowTouchMove: false,
   navigation: {
     nextEl: ".cases-slider .swiper-button-next",
     prevEl: ".cases-slider .swiper-button-prev",
@@ -42,6 +43,19 @@ var swiper2 = new Swiper(".cases-slider", {
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
+  },
+});
+
+var swiper4 = new Swiper(".case-inner-slider", {
+  observer: true,
+  observeParents: true,
+  observeSlideChildren: true,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  effect: "fade",
+  navigation: {
+    nextEl: ".case-inner-slider .swiper-button-next-inner",
+    prevEl: ".case-inner-slider .swiper-button-prev-inner",
   },
 });
 
@@ -147,56 +161,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function () {
   const btnMenuMobile = document.querySelector('.mobile-menu-btn');
-  const headerMobileWrapper = document.querySelector('.main-menu');
+  const headerMobileWrapper = document.querySelector('.header-bottom');
+  const btnCloseMobileMenu = document.querySelectorAll('.btn-close-mobile-menu');
 
   btnMenuMobile.addEventListener('click', function () {
-    headerMobileWrapper.classList.toggle('show');
+    headerMobileWrapper.classList.add('show');
+  });
 
-    if (headerMobileWrapper.classList.contains('show')) {
-      btnMenuMobile.classList.add('cross');
-    } else {
-      btnMenuMobile.classList.remove('cross');
-    }
+  btnCloseMobileMenu.forEach(btn => {
+    btn.addEventListener('click', function () {
+      headerMobileWrapper.classList.remove('show');
+    });
   });
 });
-
-
-
-google.charts.load("current", {packages:['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ["Element", "Density", { role: "style" } ],
-    ["Copper", 11, "#698BD6"],
-    ["Silver", 105, "#D6B469"],
-    ["Gold", 34, "#698BD6"],
-    ["Platinum", 98, "color: #D6B469"]
-  ]);
-
-  var view = new google.visualization.DataView(data);
-  view.setColumns([0, 1,
-    { calc: "stringify",
-      sourceColumn: 1,
-      type: "string",
-      role: "annotation" },
-    2]);
-
-  var options = {
-    width: 600,
-    height: 246,
-    bar: {groupWidth: 70},
-    legend: { position: "none" },
-    hAxis: { textPosition: 'none', gridlines: { count: 0 } },
-    vAxis: { textPosition: 'none', gridlines: { count: 0 } },
-    annotations: { textStyle: { fontSize: 16 } },
-    chartArea: { borderWidth: 0 }
-  };
-
-  var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-  chart.draw(view, options);
-}
-
-
 
 window.onload = function() {
   const bars = document.querySelectorAll('.bar');

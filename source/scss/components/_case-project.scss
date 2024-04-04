@@ -98,3 +98,15 @@
   }
 
 }
+
+@media (max-width: 1024px) {
+  .case-project-section .plan-card .plan-card-title {
+    display: flex;
+  }
+  .case-project-section .plan-card {
+    padding: 30px;
+  }
+  .case-project-section .project-content .description {
+    max-width: 70%;
+  }
+}

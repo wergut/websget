@@ -13,6 +13,7 @@
   }
 
   .description {
+    margin-bottom: 35px;
 
     p {
       font-size: 20px;
@@ -24,6 +25,20 @@
         font-weight: 500;
       }
     }
+  }
+
+  .form-item-name {
+    font-family: $--font-title;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: $--color-black;
+    margin-bottom: 20px;
+  }
+
+  .form-pagination {
+    margin-bottom: 0;
+    margin-top: 40px;
   }
 
   .d-flex {
@@ -97,6 +112,17 @@
     }
     .image-wrapper-mobile {
       display: block;
+    }
+    .form-control {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-pagination {
+      order: -1;
+      margin: 32px 0;
+    }
+    .form-item-name {
+      margin-bottom: 16px;
     }
   }
 }

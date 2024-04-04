@@ -24,6 +24,14 @@
 
   .form-wrapper {
 
+    form {
+      margin-bottom: 20px;
+
+      input:not([type='submit']) {
+        box-shadow: 0 5px 5px 0 #E8E8E8;
+      }
+    }
+
     .form-description {
       margin-bottom: 35px;
 
@@ -107,6 +115,8 @@
 
     .form-wrapper {
 
+
+
       .form-policy {
         max-width: 100%;
         font-size: 12px;
@@ -114,6 +124,7 @@
       }
 
       .form-description  {
+        margin-bottom: 24px;
 
         p {
           font-size: 18px;
@@ -131,6 +142,7 @@
         margin-bottom: 16px;
       }
     }
+
 
   }
 }

@@ -41,6 +41,16 @@
     max-width: 440px;
   }
 
+  .form-control {
+
+    form {
+
+      p {
+        width: calc(33.33% - 20px);
+      }
+    }
+  }
+
   .contact-block-title {
     color: $--color-white;
     font-family: $--font-title;
@@ -93,6 +103,28 @@
       width: initial;
     }
 
+    .form-control form p {
+
+    }
+
+  }
+}
+
+@media (max-width: 720px) {
+  .callback-section-dark .form-control form {
+
+    p + p {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    label {
+      width: 100%;
+    }
+
+    p {
+      width: 100%;
+    }
   }
 }
 
