@@ -60,6 +60,7 @@
 
 .modal-dialog .modal-content {
   max-width: 440px;
+  width: 100%;
   margin: auto;
   position: relative;
   align-items: flex-start;
@@ -138,6 +139,21 @@
     }
   }
 
+}
+
+.modal-dialog {
+  .video-wrapper {
+    max-width: 440px;
+    height: 300px;
+    width: 100%;
+
+    iframe, video {
+      height: inherit;
+      width: 100%;
+      object-fit: cover;
+      border: none;
+    }
+  }
 }
 
 

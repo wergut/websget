@@ -217,15 +217,16 @@ document.addEventListener('DOMContentLoaded', function() {
   /* close modal */
   closeButtons.forEach(function(closeBtn) {
     closeBtn.addEventListener('click', function (e) {
-      this.closest('.modal-dialog').style.display = "none";
+      var modal = this.closest('.modal-dialog');
+      modal.style.display = "none";
       overlay.classList.remove('modal-open');
-      this.closest('.modal-dialog').classList.remove('modal-opening');
+      modal.classList.remove('modal-opening');
     })
   });
 
   document.querySelectorAll('.modal-dialog').forEach(function(item) {
     item.addEventListener('click', function (e) {
-      if(e.target !== e.currentTarget) {
+      if(e.target !== e.currentTarget && !e.target.classList.contains('modal-close')) {
         return
       } else {
         this.style.display = "none";
