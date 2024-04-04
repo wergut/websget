@@ -68,12 +68,21 @@
         width: fit-content;
         display: block;
 
+        &:hover {
+          color: $--color-white;
+
+          &:after {
+            background-color: $--color-white;
+          }
+        }
+
         &:after {
           content: "";
           display: block;
           position: relative;
           top: -3px;
           width: 100%;
+          transition: 0.3s;
           height: 1px;
           background-color: $--color-gold;
         }
