@@ -1,7 +1,99 @@
 <!--header.html-->
 <%= _.template(require('../includes/common/header-transparent.html').default)({}) %>
 
-<%= _.template(require('../includes/blocks/main-banner.html').default)({}) %>
+<section class="main-banner">
+  <div class="container">
+    <div class="breadcrumbs">
+      <span>
+        <span>
+          <a href="/">Главная</a>
+        </span> |
+        <span class="breadcrumb_last" aria-current="page">Наши кейсы</span>
+      </span>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-md-12 col-m-12">
+        <div class="subtitle">Увеличьте продажи через Ваш сайт</div>
+        <div class="main-banner-title">Маркетинговое агентство <span>полного цикла</span></div>
+        <div class="banner-image-block banner-image-block-tablet">
+          <div class="banner-content">
+            <div class="banner-content-title">Павел Владимирович</div>
+            <div class="banner-content-subtitle">Наш генеральный директор</div>
+          </div>
+          <div class="banner-image">
+            <img src="./img/main-banner-image.png" alt="">
+          </div>
+          <div class="banner-btn-wrapper">
+            <span>Видео работы команды</span>
+            <a class="open-modal-dialog banner-btn" data-src="modal-popup-video"  href="#">
+              <img src="./img/icons/banner-btn-ico.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="form-wrapper">
+          <div class="form-title">Закажите бесплатный аудит</div>
+          <div class="form-description">
+            <p>Напишите нам и мы соберем «продажные ключи» для Вашего бизнеса и определим позиции</p>
+          </div>
+          <form action=""></form>
+          <div class="form-policy">
+            Отправляя заявку, Вы даете согласие на обработку персональных данных, установленными
+            <a href="#">политикой конфиденциальности</a>
+          </div>
+        </div>
+        <div class="banner-info-block">
+          <div class="info-block-ico">
+            <img src="./img/icons/banner-info-block-ico.svg" alt="">
+          </div>
+          <div class="info-block-content">
+            <div class="info-block-title"><span>100% возврат денег</span> при недостижении результата, прописанного в договоре</div>
+            <div class="info-block-links">
+              <a href="#">Пример в договоре</a>
+              <a href="#">Почему мы даем такие гарантии?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-12 col-m-12">
+        <div class="banner-image-block banner-image-block-pc">
+          <div class="banner-content">
+            <div class="banner-content-title">Павел Владимирович</div>
+            <div class="banner-content-subtitle">Наш генеральный директор</div>
+          </div>
+          <div class="banner-image">
+            <img src="./img/main-banner-image.png" alt="">
+          </div>
+          <div class="banner-btn-wrapper">
+            <span>Видео работы команды</span>
+            <a class="banner-btn open-modal-dialog" href="#" data-src="modal-popup-video">
+              <img src="./img/icons/banner-btn-ico.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="row banner-stats-block">
+          <div class="col-lg-4 col-md-4">
+            <div class="stat-item">
+              <div class="stat-number">+30%</div>
+              <div class="stat-title">Увеличение конверсии сайта</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="stat-item">
+              <div class="stat-number">+87%</div>
+              <div class="stat-title">Рост целевого трафика</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="stat-item">
+              <div class="stat-number">X3</div>
+              <div class="stat-title">Увеличение продаж</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="seo-section">
   <div class="container">

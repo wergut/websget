@@ -1,6 +1,7 @@
 <!--header.html-->
 <%= _.template(require('../includes/common/header.html').default)({}) %>
 
+
 <section class="cases-section cases-section-main">
   <div class="container">
     <div class="lines-background">
@@ -14,8 +15,17 @@
         <div class="line"></div>
       </div>
     </div>
-    <h1 class="h1">Наши кейсы</h1>
 
+    <div class="breadcrumbs">
+      <span>
+        <span>
+          <a href="/">Главная</a>
+        </span> |
+        <span class="breadcrumb_last" aria-current="page">Наши кейсы</span>
+      </span>
+    </div>
+
+    <h1 class="h1">Наши кейсы</h1>
     <div class="filters-block">
       <div class="filter active">
         <span>Все кейсы</span>
