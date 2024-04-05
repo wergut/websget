@@ -18,6 +18,14 @@ section {
   padding: 90px 0;
 }
 
+main {
+  padding-top: 90px;
+}
+
+main:has(.main-banner), main:has(.single-case-banner) {
+  padding-top: 0;
+}
+
 section:has(.lines-background) {
   position: relative;
 }
@@ -233,6 +241,10 @@ section:has(.lines-background) {
     line-height: inherit;
     color: $--color-blue;
     text-decoration: underline;
+
+    &:hover {
+      color: $--color-gold;
+    }
   }
 }
 
@@ -382,6 +394,10 @@ section:has(.lines-background) {
 
   section {
     padding: 60px 0;
+  }
+
+  main {
+    padding-top: 72px;
   }
 
   .form-policy  {

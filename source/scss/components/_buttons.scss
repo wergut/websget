@@ -20,7 +20,7 @@ button {
   box-shadow: 0 5px 5px 0 #E8E8E8;
 
   &:hover {
-    background-color: #b7363f;
+    background-color: #EE1221;
   }
 }
 
@@ -52,6 +52,11 @@ button {
   bottom: 0;
   top: unset;
   cursor: pointer;
+
+  &:hover {
+    background-color: $--color-black;
+    background-image: url(../img/icons/swiper-arrow-white.svg);
+  }
 }
 
 .swiper-button-next.swiper-button-disabled,

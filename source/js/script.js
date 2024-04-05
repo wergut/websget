@@ -246,3 +246,19 @@ for (let i = 0; i < element.length; i++){
 }
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  if (window.pageYOffset > 0) {
+    header.classList.add('scrolled');
+  }
+});

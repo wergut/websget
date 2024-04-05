@@ -1,12 +1,16 @@
 .header {
   padding-top: 15px;
   background-color: $--color-light-grey;
-  padding-bottom: 20px;
+  position: fixed;
+  transition: 0.3s;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
   .header-top {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
 
     .header-mobile {
       display: none;
@@ -54,14 +58,12 @@
 
     .btn-close-mobile-menu {
       display: none;
-      width: 30px;
-      height: 30px;
-      border: 2px solid $--color-grey-dark;
+      width: 20px;
+      height: 20px;
       margin-left: 24px;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 6px;
 
 
       .line {
@@ -74,7 +76,7 @@
           transform: translateY(4px) rotate(45deg);
         }
         &:nth-child(2) {
-          transform: translateY(-3px) rotate(-45deg);
+          transform: translateY(-6px) rotate(-45deg);
         }
       }
     }
@@ -138,11 +140,15 @@
 }
 
 .header-transparent {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   background-color: transparent;
+}
+
+.header.scrolled {
+  background-color: $--color-white;
 }
 
 @media (max-width: 1024px) {
@@ -206,36 +212,21 @@
       padding: 15px 75px 20px;
       transition: 0.3s;
 
+      .logo {
+        display: none;
+      }
+
       .mobile-popup-menu {
         flex-wrap: wrap;
 
-        .main-menu {
-          margin-top: 30px;
-
-          > ul {
-            flex-wrap: wrap;
-
-            li {
-              width: 50%;
-              margin-bottom: 15px;
-            }
-
-            li + li {
-              margin-left: 0;
-            }
-          }
-        }
-
         .header-contact-phone {
-          margin-top: 30px;
+          display: none;
         }
 
       }
 
       .logo {
-        max-width: 50%;
-        display: inline-flex;
-        align-items: center;
+        display: none;
       }
 
       .btn-close-mobile-menu {
@@ -254,9 +245,10 @@
 
 @media (max-width: 600px) {
   .header .header-bottom {
-    padding: 15px 24px 20px;
+    padding: 24px 24px 49px;
   }
   .header {
+    padding-bottom: 20px;
     .social-links a img {
       width: 20px;
       height: 20px;
