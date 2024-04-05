@@ -1,6 +1,6 @@
 .main-banner {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0 0;
   background-size: cover;
   background-image: url(../img/seo-text-back.png);
   background-color: #EBEBEB;
@@ -304,6 +304,7 @@
 @media (max-width: 600px) {
   .main-banner {
     padding-bottom: 60px;
+    padding-top: 132px;
     .subtitle {
       font-size: 12px;
       line-height: 17px;
@@ -423,5 +424,13 @@
         }
       }
     }
+  }
+}
+
+
+@media (max-width: 360px) {
+  .main-banner .main-banner-title {
+    font-size: 26px;
+    line-height: 32px;
   }
 }

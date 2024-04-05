@@ -1,4 +1,9 @@
 .seo-section {
+  padding-bottom: 50px;
+
+  .col-lg-4 {
+    margin-bottom: 40px;
+  }
 
   .h2 {
     text-align: center;
@@ -50,6 +55,11 @@
 
 @media (max-width: 600px) {
   .seo-section {
+    padding-bottom: 36px;
+
+    .col-lg-4 {
+      margin-bottom: 24px;
+    }
 
     .card-wrapper {
       padding: 24px;

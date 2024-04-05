@@ -131,6 +131,10 @@
     .accordion-item {
       padding: 0 16px;
 
+      &:not(:last-of-type) {
+        margin-bottom: 24px;
+      }
+
       .accordion-item-header {
         padding: 16px 31px 16px 0;
         font-size: 18px;

@@ -116,6 +116,9 @@
       }
     }
     .footer-contact-time {
+      span {
+        font-weight: 500;
+      }
       &:before {
         content: "";
         display: block;
@@ -129,6 +132,9 @@
       }
     }
     .footer-contact-address {
+      span {
+        font-weight: 500;
+      }
       &:before {
         content: "";
         display: block;

@@ -1,11 +1,18 @@
 .single-case-banner {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0 0;
   background-size: cover;
   background-image: url(../img/seo-text-back.png);
   background-color: #EBEBEB;
   background-blend-mode: multiply;
-  padding-top: 188px;
+  padding-top: 148px;
+
+  .case-banner-cards {
+
+    .col-lg-4 {
+      margin-bottom: 40px;
+    }
+  }
 
   .case-banner-cards {
     margin-top: 40px;
@@ -95,8 +102,12 @@
 
 }
 
+
 @media (max-width: 1024px) {
-  .single-case-banner .case-banner-cards .col-md-6:last-of-type {
-    margin-top: 24px;
+  .single-case-banner {
+    padding-top: 108px;
+    .case-banner-cards .col-lg-4 {
+      margin-bottom: 24px;
+    }
   }
 }

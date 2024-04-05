@@ -1,9 +1,15 @@
 .vacancies {
   padding-top: 178px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   background-image: url(../img/vacancy-back.png);
   background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: 0 0;
   background-color: $--color-light-grey;
+}
+
+
+@media (max-width: 600px) {
+  .vacancies {
+    padding-top: 132px;
+  }
 }

@@ -7,6 +7,11 @@
   padding-top: 0;
   overflow: hidden;
 
+  .social-links a img {
+    width: 24px;
+    height: 24px;
+  }
+
   &:has(.h2.red) {
     .h2 {
 
@@ -30,8 +35,13 @@
 
     p {
       color: $--color-white;
-      max-width: 80%;
+      font-size: 20px;
+      line-height: 26px;
     }
+  }
+
+  form {
+    display: flex;
   }
 
   .form-policy {
@@ -39,16 +49,6 @@
     margin-top: 15px;
     margin-bottom: 40px;
     max-width: 440px;
-  }
-
-  .form-control {
-
-    form {
-
-      p {
-        width: calc(33.33% - 20px);
-      }
-    }
   }
 
   .contact-block-title {
@@ -86,6 +86,12 @@
     }
   }
 
+}
+
+@media (min-width: 1024px) {
+  .callback-section-dark .form-control form input:not([type=submit]) {
+    width: 194px;
+  }
 }
 
 @media (max-width: 1024px) {

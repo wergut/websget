@@ -1,11 +1,21 @@
 .callback-section-light {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0 0;
   background-size: cover;
   background-image: url(../img/seo-text-back.png);
   background-color: #EBEBEB;
   background-blend-mode: multiply;
   padding: 34px 0 70px;
+
+  .image-wrapper img {
+    max-width: initial;
+    width: 730px;
+  }
+
+  .social-links a img {
+    width: 24px;
+    height: 24px;
+  }
 
   .callback-block-wrapper {
 

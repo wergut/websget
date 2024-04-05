@@ -1,6 +1,6 @@
 .our-team {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0 0;
   background-size: cover;
   background-image: url(../img/seo-text-back.png);
   background-blend-mode: multiply;
@@ -48,6 +48,7 @@
 
   .our-team {
     overflow: hidden;
+    padding-top: 132px;
 
     .staff-card {
       padding: 24px;
