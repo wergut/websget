@@ -7,11 +7,13 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
+  background-color: $--color-light-grey;
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 20px;
+  background-color: $--color-gold;
 }
 
 section {
