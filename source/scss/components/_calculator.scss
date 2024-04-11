@@ -27,6 +27,12 @@
     }
   }
 
+  form {
+    input {
+      box-shadow: 0 5px 5px 0 #E8E8E8;
+    }
+  }
+
   .form-item-name {
     font-family: $--font-title;
     font-size: 16px;
@@ -72,6 +78,15 @@
 
 @media (max-width: 1024px) {
   .calculator-section {
+
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-wrapper-pc {
+      display: none;
+    }
 
     .calculator-block-wrapper {
       &:nth-of-type(1), &:nth-of-type(2) {

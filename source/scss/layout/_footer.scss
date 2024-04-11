@@ -53,6 +53,19 @@
       align-items: center;
       margin-bottom: 20px;
 
+      &:hover p {
+        color: $--color-white;
+
+        &:after {
+          background-color: $--color-white;
+        }
+      }
+
+      > a {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       span {
         display: block;
         width: 100%;
@@ -61,20 +74,13 @@
         color: $--color-white;
         line-height: 20px;
       }
-      a {
+      p {
         font-weight: 400;
         font-size: 16px;
         color: $--color-gold;
         width: fit-content;
+        transition: 0.3s;
         display: block;
-
-        &:hover {
-          color: $--color-white;
-
-          &:after {
-            background-color: $--color-white;
-          }
-        }
 
         &:after {
           content: "";

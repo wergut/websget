@@ -6,14 +6,11 @@ body {
   margin: 0;
 }
 
-body::-webkit-scrollbar {
-  width: 6px;
-  background-color: $--color-light-grey;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-  background-color: $--color-gold;
+body:has(.header-transparent) {
+  
+  main {
+    padding-top: 0;
+  }
 }
 
 section {
@@ -24,12 +21,20 @@ main {
   padding-top: 90px;
 }
 
-main:has(.main-banner), main:has(.single-case-banner) {
-  padding-top: 0;
-}
-
 section:has(.lines-background) {
   position: relative;
+}
+
+.swiper-slide {
+    box-sizing: border-box;
+    opacity: 0;
+    transition-duration: 250ms;
+    transition-property: transform,opacity;
+    height: auto
+}
+
+.swiper-slide-visible {
+    opacity: 1;
 }
 
 .table-wrapper {
@@ -181,8 +186,11 @@ section:has(.lines-background) {
     height: 12px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 12px;
     background-image: url(../img/icons/star-gold-ico.svg);
+  }
+  .star-ico + .star-ico {
+    margin-left: 2px;
   }
 }
 

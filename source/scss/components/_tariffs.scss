@@ -46,8 +46,20 @@
         font-weight: 400;
         line-height: 19px;
         color: $--color-grey-dark;
-        display: flex;
-        align-items: flex-start;
+        position: relative;
+        padding-left: 18px;
+
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 19px;
+          color: $--color-grey-dark;
+          text-decoration: underline;
+
+          &:hover {
+            color: $--color-gold;
+          }
+        }
 
         &:not(:last-of-type) {
           margin-bottom: 20px;
@@ -55,7 +67,7 @@
 
         &:before {
           content: "";
-          display: block;
+          display: inline-block;
           width: 8px;
           min-width: 8px;
           height: 8px;
@@ -63,6 +75,9 @@
           transform: rotate(45deg);
           margin-right: 10px;
           margin-top: 4px;
+          position: absolute;
+          left: 0;
+          top: 5px;
         }
       }
     }
@@ -134,6 +149,10 @@
 @media (max-width: 1024px) {
   .tariffs-section {
 
+    .tariff-card {
+      min-height: initial;
+    }
+
     .col-md-12 {
 
       &:not(:last-of-type) {
@@ -183,6 +202,9 @@
         color: $--color-red;
       }
 
+    }
+    .col-md-12:not(:last-of-type) {
+      margin-bottom: 24px;
     }
   }
 }

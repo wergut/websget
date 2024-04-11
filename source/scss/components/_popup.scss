@@ -5,39 +5,48 @@
   top: 0;
   bottom: 0;
   z-index: 99999;
+  opacity: 0;
   width: 100%;
   height: 100%;
   background: #363434E5;
   justify-content: center;
   align-items: center;
-
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  visibility: hidden;
+  transition: opacity .5s ease-in-out
 }
+
 .modal-open {
   overflow: hidden;
+  pointer-events: none;
 }
 
-@keyframes fadeIn_v2 {
-  0% {transform: translate(0, -50%);}
-  50% { transform: translate(0, -25%); }
-  100% { transform: translate(0, 0%); }
+.modal-dialog.modal-closing {
+  opacity: 0;
+  transition: 0.5s;
 }
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  0.1% { opacity: 0; }
-  100% { opacity: 1; }
-}
-.modal-opening {
+
+.modal-dialog.modal-opening {
   opacity: 1;
   display: block;
-  animation: fadeIn 0.5s linear forwards;
+  animation: fadeIn .5s ease;
+  visibility: visible;
+  pointer-events: initial;
 }
-.modal-opening .modal-content {
-  animation: fadeIn_v2 0.3s linear forwards;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  0.1% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
 }
+
 .modal-close {
   position: absolute;
   right: 0;
@@ -143,8 +152,7 @@
 
 .modal-dialog {
   .video-wrapper {
-    max-width: 440px;
-    height: 300px;
+    height: 400px;
     width: 100%;
 
     iframe, video {
@@ -156,10 +164,21 @@
   }
 }
 
+.modal-dialog:has(.video-wrapper) .modal-content {
+  max-width: 50%;
+}
+
 
 @media (max-width: 600px) {
   .modal-dialog .modal-content .modal-body {
     padding: 0 8px;
+  }
+  .modal-dialog:has(.video-wrapper) .modal-content {
+    max-width: 100%;
+    margin: 0 24px;
+  }
+  .modal-dialog .video-wrapper {
+    height: 240px;
   }
   .modal-close {
     right: 8px;

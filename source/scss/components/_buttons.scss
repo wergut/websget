@@ -65,6 +65,12 @@ button {
 .swiper-button-prev-inner.swiper-button-disabled {
   cursor: not-allowed;
   opacity: .35;
+  pointer-events: initial;
+
+  &:hover {
+    background-color: transparent;
+    background-image: url(../img/icons/swiper-button-arrow.svg);
+  }
 }
 
 .swiper-button-next, .swiper-button-next-inner {

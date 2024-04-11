@@ -4,6 +4,7 @@ var swiper1 = new Swiper(".testimonials-slider", {
   observeSlideChildren: true,
   slidesPerView: 3,
   spaceBetween: 30,
+  watchSlidesProgress: true,
   navigation: {
     nextEl: ".testimonials-slider .swiper-button-next",
     prevEl: ".testimonials-slider .swiper-button-prev",
@@ -33,6 +34,7 @@ var swiper2 = new Swiper(".cases-slider", {
   slidesPerView: 1,
   spaceBetween: 40,
   allowTouchMove: false,
+  watchSlidesProgress: true,
   navigation: {
     nextEl: ".cases-slider .swiper-button-next",
     prevEl: ".cases-slider .swiper-button-prev",
@@ -52,6 +54,7 @@ var swiper4 = new Swiper(".case-inner-slider", {
   observeSlideChildren: true,
   slidesPerView: 1,
   spaceBetween: 0,
+  watchSlidesProgress: true,
   effect: "fade",
   navigation: {
     nextEl: ".case-inner-slider .swiper-button-next-inner",
@@ -65,6 +68,7 @@ var swiper3 = new Swiper(".staff-slider", {
   observeSlideChildren: true,
   slidesPerView: 4,
   spaceBetween: 40,
+  watchSlidesProgress: true,
   navigation: {
     nextEl: ".staff-slider .swiper-button-next",
     prevEl: ".staff-slider .swiper-button-prev",
@@ -196,32 +200,62 @@ window.onload = function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-
   var modalButtons = document.querySelectorAll('.open-modal-dialog'),
-    overlay      = document.querySelector('body'),
+    overlay = document.querySelector('body'),
     closeButtons = document.querySelectorAll('.modal-dialog .modal-close');
 
-  /* open modal*/
-  modalButtons.forEach(function(modalBtn){
-    modalBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      var modalId = this.getAttribute('data-src'),
-        modalElem = document.querySelector('.modal-dialog.'+modalId);
+  async function openModal(modalBtn) {
+    return new Promise(resolve => {
+      var modalId = modalBtn.getAttribute('data-src'),
+        modalElem = document.querySelector('.modal-dialog.' + modalId);
       overlay.classList.add('modal-open');
-      modalElem.style.display = "flex";
-      modalElem.classList.add('modal-opening');
-    }); // end click
-  }); // end foreach
+      modalElem.style.display = 'flex';
 
+      setTimeout(function() {
+        modalElem.classList.add('modal-opening');
+        resolve();
+      }, 0);
+    });
+  }
+
+  async function closeModal(closeBtn) {
+    return new Promise(resolve => {
+      var modal = closeBtn.closest('.modal-dialog');
+      modal.classList.remove('modal-opening');
+      modal.classList.add('modal-closing');
+
+      setTimeout(function() {
+        modal.classList.remove('modal-closing');
+        modal.style.display = 'none';
+        overlay.classList.remove('modal-open');
+        resolve();
+      }, 500); // Длительность анимации fadeOut
+    });
+  }
+
+  /* open modal */
+  modalButtons.forEach(function(modalBtn) {
+    modalBtn.addEventListener('click', async function(e) {
+      e.preventDefault();
+      await openModal(modalBtn);
+    });
+  });
 
   /* close modal */
   closeButtons.forEach(function(closeBtn) {
-    closeBtn.addEventListener('click', function (e) {
-      var modal = this.closest('.modal-dialog');
-      modal.style.display = "none";
-      overlay.classList.remove('modal-open');
-      modal.classList.remove('modal-opening');
-    })
+    closeBtn.addEventListener('click', async function(e) {
+      await closeModal(closeBtn);
+    });
+  });
+
+  document.querySelectorAll('.modal-dialog').forEach(function(item) {
+    item.addEventListener('click', async function(e) {
+      if (e.target !== e.currentTarget) {
+        return;
+      } else {
+        await closeModal(this);
+      }
+    });
   });
 
   document.querySelectorAll('.modal-dialog').forEach(function(item) {
@@ -229,11 +263,18 @@ document.addEventListener('DOMContentLoaded', function() {
       if(e.target !== e.currentTarget && !e.target.classList.contains('modal-close')) {
         return
       } else {
-        this.style.display = "none";
+        var iframe = this.querySelector('iframe');
+        if (iframe) {
+          // Остановка видео при закрытии модального окна
+          var videoSrc = iframe.getAttribute('src');
+          iframe.setAttribute('src', '');
+          iframe.setAttribute('src', videoSrc);
+        }
         this.classList.remove('modal-opening');
       }
     })
   });
+
 });
 
 

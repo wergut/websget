@@ -92,10 +92,26 @@
   .callback-section-dark .form-control form input:not([type=submit]) {
     width: 194px;
   }
+
 }
 
 @media (max-width: 1024px) {
   .callback-section-dark {
+
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .form-control form {
+      flex-wrap: wrap;
+
+      input[type=submit] {
+        width: 100%;
+      }
+
+    }
+
     .callback-block-wrapper {
 
       &:nth-of-type(1), &:nth-of-type(2) {

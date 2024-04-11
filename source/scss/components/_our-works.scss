@@ -32,7 +32,7 @@
       }
 
       &:not(:last-of-type) {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
       }
 
       .work-item-ico {
@@ -118,6 +118,7 @@
 
         .work-item-title {
           padding-right: 0;
+          width: 100%;
           font-size: 18px;
           line-height: 22px;
           margin-bottom: 10px;
@@ -126,4 +127,9 @@
     }
 
   }
+
+  .our-works .works-list .work-item:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
 }

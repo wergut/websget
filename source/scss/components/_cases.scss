@@ -1,4 +1,5 @@
 .cases-section {
+  overflow: hidden;
 
   .case-title {
     font-family: $--font-title;
@@ -84,7 +85,6 @@
 .cases-slider {
   max-width: 100%;
   position: relative;
-  overflow: hidden;
   padding-bottom: 110px;
 
   .slider-notification {
@@ -97,6 +97,10 @@
     width: 100%;
     bottom: 46px;
     justify-content: center;
+  }
+
+  &:has(.swiper-pagination-bullet:only-child)  {
+    padding-bottom: 0;
   }
 
 
@@ -117,6 +121,11 @@
     background-color: transparent;
     opacity: 1;
     color: $--color-black;
+    margin: 0 10px!important;
+    font-family: $--font-title;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
   }
   .swiper-pagination-bullet-active {
     background-color: $--color-black;
@@ -176,7 +185,7 @@
 
 @media (max-width: 1024px) {
   .case-inner-slider {
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
   }
   .cases-slider {
     .col-lg-6:nth-of-type(2) {

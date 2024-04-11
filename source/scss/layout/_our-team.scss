@@ -5,7 +5,8 @@
   background-image: url(../img/seo-text-back.png);
   background-blend-mode: multiply;
   background-color: $--color-light-grey;
-  padding-top: 178px;
+  padding-top: 156px;
+  overflow: hidden;
 
   .staff-card {
     padding: 30px;
@@ -39,7 +40,6 @@
 .staff-slider {
   max-width: 100%;
   position: relative;
-  overflow: hidden;
   width: 100%;
   padding-bottom: 90px;
 }
@@ -47,8 +47,7 @@
 @media (max-width: 600px) {
 
   .our-team {
-    overflow: hidden;
-    padding-top: 132px;
+    padding-top: 75px;
 
     .staff-card {
       padding: 24px;
