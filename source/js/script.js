@@ -328,17 +328,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-if (typeof IMask !== 'undefined') {
-  const elements = document.querySelectorAll('input.phone');
-  const maskOptions = {
-    mask: '+{7}(000)000-00-00'
-  };
-  if (elements.length > 0) {
-    elements.forEach(function(element) {
-      let mask = IMask(element, maskOptions);
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof IMask !== 'undefined') {
+    let elements = document.querySelectorAll('input.phone');
+    let maskOptions = {
+      mask: '+{7}(000)000-00-00'
+    };
+    if (elements.length > 0) {
+      elements.forEach(function(element) {
+        let mask = IMask(element, maskOptions);
+      });
+    }
   }
-}
+});
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -410,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.target.tagName === 'A') {
         const targetStepIndex = parseInt(e.target.textContent) - 1;
         const targetStep = formSteps[targetStepIndex];
-        if (targetStep) {
+        if (targetStep && checkRequiredFields(targetStep)) { // Добавил проверку на заполненность текущего шага
           formSteps.forEach(step => step.style.display = 'none');
           targetStep.style.display = 'block';
           updateNextButtonState(targetStep);

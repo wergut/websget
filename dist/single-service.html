@@ -588,35 +588,107 @@
         <div class="image-wrapper image-wrapper-mobile">
           <img src="./img/calc-image.png" alt="">
         </div>
-        <div class="form-control">
-          <form action="">
-            <div class="form-item-name">Адрес вашего сайта</div>
-            <p>
-              <label>
-                <input type="text" placeholder="Ссылка на сайт">
-              </label>
-            </p>
-            <p>
-              <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Дальше">
-            </p>
+        <div class="form-control multi-step-form">
+          <form>
+            <div class="form-step form-step-1" style="display:block;">
+              <div class="form-item-name">Адрес вашего сайта</div>
+              <p>
+                <label>
+                  <input required type="text" placeholder="https://websget.ru">
+                </label>
+              </p>
+              <p>
+                <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Дальше">
+              </p>
+            </div>
+            <div class="form-step form-step-2">
+              <div class="form-item-name">Регион/город продвижения</div>
+              <p>
+                <label>
+                  <input required type="text" placeholder="https://websget.ru">
+                </label>
+              </p>
+              <p>
+                <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Дальше">
+              </p>
+            </div>
+            <div class="form-step form-step-3">
+              <div class="form-item-name">Внесите список продвигаемых слов</div>
+              <p>
+                <label>
+                  <textarea required placeholder="Список слов"></textarea>
+                </label>
+              </p>
+              <p>
+                <label class="custom-file-upload">
+                  <label for="file">Прикрепить список запросов</label>
+                  <input type="file" id="file" name="file">
+                  <span class="file-upload-message"></span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox">
+                  Подбор запросов с нашей стороны
+                </label>
+              </p>
+              <p>
+                <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Дальше">
+              </p>
+            </div>
+            <div class="form-step form-step-4">
+              <div class="form-item-name">Где хотите продвигаться</div>
+              <p>
+                <label>
+                  <input required type="checkbox">
+                  Яндекс
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input required type="checkbox">
+                  Google
+                </label>
+              </p>
+              <p>
+                <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Дальше">
+              </p>
+            </div>
+            <div class="form-step form-step-5">
+              <div class="form-item-name">Ваш номер телефона</div>
+              <p>
+                <label>
+                  <input required class="phone" name="phone" type="text" placeholder="https://websget.ru">
+                </label>
+              </p>
+              <p>
+                <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Дальше">
+              </p>
+            </div>
+            <div class="form-step form-step-6">
+              <div class="form-item-name">Спасибо за заполнение калькулятора, мы свяжемся с вами в ближайшее время.</div>
+            </div>
+            <ul class="form-pagination" id="form-pagination">
+              <li class="active">
+                <a href="#">1</a>
+              </li>
+              <li>
+                <a href="#">2</a>
+              </li>
+              <li>
+                <a href="#">3</a>
+              </li>
+              <li>
+                <a href="#">4</a>
+              </li>
+              <li>
+                <a href="#">5</a>
+              </li>
+              <li>
+                <a href="#">6</a>
+              </li>
+            </ul>
           </form>
-          <ul class="form-pagination">
-            <li class="active">
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
-          </ul>
         </div>
       </div>
       <div class="calculator-block-wrapper">
@@ -1111,7 +1183,7 @@
   <div class="modal-content">
     <div class="modal-body container-fluid">
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/RK1K2bCg4J8?si=DBndQWvYfxU9cCM1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RK1K2bCg4J8?si=jrmvyo5LoxzIJvLD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <button type="button" class="modal-close d-none d-xl-inline-block" data-dismiss="modal" aria-label="Close"></button>
     </div>

@@ -352,17 +352,7 @@
     }
 
     .banner-image-block .banner-image {
-      justify-content: flex-end;
-    }
-
-    .banner-image-block .banner-image:after {
-      height: 448px;
-    }
-
-    .banner-image-block .banner-content {
-      top: -30px;
-      right: unset;
-      left: 30px;
+      justify-content: flex-start;
     }
 
     .main-banner-title {
@@ -385,10 +375,6 @@
       display: none;
     }
 
-  }
-
-  .main-banner .banner-image-block .banner-image img {
-    max-width: 350px;
   }
 
 }
