@@ -152,7 +152,6 @@
 
 .modal-dialog {
   .video-wrapper {
-    height: 400px;
     width: 100%;
 
     iframe, video {
@@ -165,7 +164,7 @@
 }
 
 .modal-dialog:has(.video-wrapper) .modal-content {
-  max-width: 50%;
+  max-width: 990px;
 }
 
 

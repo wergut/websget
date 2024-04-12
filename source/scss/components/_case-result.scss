@@ -38,12 +38,14 @@
       margin-left: 15px;
     }
 
-    .tag-dark {
+    .results-tab-btn {
+      border: 1px solid $--color-black;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .results-tab-btn.active {
       background-color: $--color-black;
       color: $--color-white;
-    }
-    .tag-border {
-      border: 1px solid $--color-black;
     }
   }
 }

@@ -119,9 +119,11 @@
   }
   .diagram-wrapper {
     height: 160px;
+    justify-content: space-evenly;
   }
   .chart-titles-bottom {
     margin-top: 10px;
+    justify-content: space-evenly;
     .chart-title {
       font-size: 12px;
       line-height: 14px;

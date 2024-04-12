@@ -343,15 +343,32 @@
 @media (max-width: 1024px) {
   .main-banner {
 
-    .main-banner-title {
-      font-size: 36px;
+    .form-wrapper {
+      width: 100%;
     }
 
-    .banner-image-block-pc {
-      display: none;
+    .subtitle {
+      font-size: 14px;
     }
-    .banner-image-block-tablet {
-      display: block;
+
+    .banner-image-block .banner-image {
+      justify-content: flex-end;
+    }
+
+    .banner-image-block .banner-image:after {
+      height: 448px;
+    }
+
+    .banner-image-block .banner-content {
+      top: -30px;
+      right: unset;
+      left: 30px;
+    }
+
+    .main-banner-title {
+      font-size: 30px;
+      line-height: 39px;
+      max-width: 75%;
     }
 
     .col-lg-5 {
@@ -369,6 +386,11 @@
     }
 
   }
+
+  .main-banner .banner-image-block .banner-image img {
+    max-width: 350px;
+  }
+
 }
 
 @media (max-width: 700px) {
@@ -381,9 +403,18 @@
 }
 
 @media (max-width: 600px) {
+
   .main-banner {
     padding-bottom: 60px;
     padding-top: 98px;
+
+    .banner-image-block-pc {
+      display: none;
+    }
+    .banner-image-block-tablet {
+      display: block;
+    }
+
     .subtitle {
       font-size: 12px;
       line-height: 17px;

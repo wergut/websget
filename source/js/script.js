@@ -163,6 +163,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  if (window.pageYOffset > 0) {
+    header.classList.add('scrolled');
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   const btnMenuMobile = document.querySelector('.mobile-menu-btn');
   const headerMobileWrapper = document.querySelector('.header-bottom');
@@ -180,21 +197,25 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.onload = function() {
-  const bars = document.querySelectorAll('.bar');
-  let maxValue = 0;
+  const diagramWrappers = document.querySelectorAll('.diagram-wrapper');
 
-  bars.forEach(bar => {
-    const value = parseFloat(bar.nextElementSibling.getAttribute('data-value'));
-    if (value > maxValue) {
-      maxValue = value;
-    }
-  });
+  diagramWrappers.forEach(wrapper => {
+    const bars = wrapper.querySelectorAll('.bar');
+    let maxValue = 0;
 
-  bars.forEach(bar => {
-    const value = parseFloat(bar.nextElementSibling.getAttribute('data-value'));
-    const height = (value / maxValue) * 100;
-    bar.style.height = height + '%';
-    bar.nextElementSibling.innerText = value;
+    bars.forEach(bar => {
+      const value = parseFloat(bar.nextElementSibling.getAttribute('data-value'));
+      if (value > maxValue) {
+        maxValue = value;
+      }
+    });
+
+    bars.forEach(bar => {
+      const value = parseFloat(bar.nextElementSibling.getAttribute('data-value'));
+      const height = (value / maxValue) * 100;
+      bar.style.height = height + '%';
+      bar.nextElementSibling.innerText = value;
+    });
   });
 }
 
@@ -278,28 +299,192 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-let element = document.querySelectorAll('input[class="phone"]');
-let maskOptions = {
-  mask: '+{7}(000)000-00-00'
-};
-for (let i = 0; i < element.length; i++){
-  let mask = IMask(element[i], maskOptions);
-}
-
-
 document.addEventListener('DOMContentLoaded', function() {
-  const header = document.querySelector('.header');
+  var uploadButton = document.getElementById('upload-button');
+  var message = document.getElementById('file-upload-message');
 
-  window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > 0) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+  if (uploadButton) {
+    uploadButton.addEventListener('click', function(event) {
+      var fileInput = document.getElementById('file');
+      var file = fileInput.files[0];
+      var formData = new FormData();
+      formData.append('file', file);
 
-  if (window.pageYOffset > 0) {
-    header.classList.add('scrolled');
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'ваш_адрес_сервера/обработчик_запросов.php', true);
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            message.textContent = xhr.responseText;
+          } else {
+            message.textContent = 'Произошла ошибка при загрузке файла.';
+          }
+        }
+      };
+
+      xhr.send(formData);
+    });
   }
 });
+
+if (typeof IMask !== 'undefined') {
+  const elements = document.querySelectorAll('input.phone');
+  const maskOptions = {
+    mask: '+{7}(000)000-00-00'
+  };
+  if (elements.length > 0) {
+    elements.forEach(function(element) {
+      let mask = IMask(element, maskOptions);
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const formSteps = document.querySelectorAll('.form-step');
+  const formPagination = document.getElementById('form-pagination');
+
+  // Проверка на наличие всех элементов на странице
+  if (formSteps.length > 0 && formPagination) {
+    // Если все элементы присутствуют, добавляем обработчики событий и другую логику
+    function checkRequiredFields(step) {
+      const requiredInputs = step.querySelectorAll('input[required], textarea[required], select[required]');
+      let checkBoxChecked = false; // Флаг для проверки чекбоксов
+      for (let i = 0; i < requiredInputs.length; i++) {
+        const input = requiredInputs[i];
+        if (input.type === 'checkbox') {
+          if (input.checked) {
+            checkBoxChecked = true; // Установить флаг в true, если хотя бы один чекбокс выбран
+          }
+        } else {
+          if (input.value.trim()) {
+            return true; // Заполнено другое обязательное поле
+          }
+        }
+      }
+      return checkBoxChecked; // Вернуть состояние флага
+    }
+
+    function updateNextButtonState(step) {
+      const nextButton = step.querySelector('.wpcf7-submit');
+      if (nextButton) {
+        nextButton.disabled = !checkRequiredFields(step);
+      }
+    }
+
+    function setActivePaginationLink(index) {
+      formPagination.querySelectorAll('li').forEach((li, i) => {
+        if (i === index) {
+          li.classList.add('active');
+        } else {
+          li.classList.remove('active');
+        }
+      });
+    }
+
+    formSteps.forEach(step => {
+      const nextButton = step.querySelector('.wpcf7-submit');
+      if (nextButton) {
+        nextButton.addEventListener('click', function (e) {
+          const currentStep = this.closest('.form-step');
+          const nextStep = currentStep.nextElementSibling;
+          if (nextStep) {
+            e.preventDefault();
+            currentStep.style.display = 'none';
+            nextStep.style.display = 'block';
+            updateNextButtonState(nextStep);
+
+            const nextStepIndex = Array.from(formSteps).indexOf(nextStep);
+            setActivePaginationLink(nextStepIndex);
+            if (nextStepIndex === formSteps.length - 1) {
+              formPagination.style.display = 'none';
+            }
+          }
+        });
+      }
+    });
+
+    formPagination.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (e.target.tagName === 'A') {
+        const targetStepIndex = parseInt(e.target.textContent) - 1;
+        const targetStep = formSteps[targetStepIndex];
+        if (targetStep) {
+          formSteps.forEach(step => step.style.display = 'none');
+          targetStep.style.display = 'block';
+          updateNextButtonState(targetStep);
+
+          setActivePaginationLink(targetStepIndex);
+          if (targetStepIndex === formSteps.length - 1) {
+            formPagination.style.display = 'none';
+          }
+        }
+      }
+    });
+
+    formSteps.forEach(step => {
+      const inputs = step.querySelectorAll('input[required], textarea[required], select[required]');
+      inputs.forEach(input => {
+        input.addEventListener('input', function () {
+          updateNextButtonState(step);
+        });
+      });
+    });
+
+    // Инициализация: показываем первый шаг
+    formSteps[0].style.display = 'block';
+    setActivePaginationLink(0);
+    updateNextButtonState(formSteps[0]);
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tabWrappers = document.querySelectorAll('.tab-wrapper');
+
+  function hideAllTabItems(wrappers) {
+    wrappers.forEach(wrapper => {
+      const tabItems = wrapper.querySelectorAll('.tab-item');
+      tabItems.forEach(item => {
+        item.style.display = 'none';
+      });
+    });
+  }
+
+  function showTabItem(wrapper, index) {
+    const tabItems = wrapper.querySelectorAll('.tab-item');
+    hideAllTabItems([wrapper]);
+    tabItems[index].style.display = 'block';
+  }
+
+  function setActiveTabButton(activeButton, buttons) {
+    buttons.forEach(button => {
+      if (button === activeButton) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    });
+  }
+
+  function initializeTabs(tabWrappers) {
+    tabWrappers.forEach(wrapper => {
+      const tabButtons = wrapper.querySelectorAll('.results-tab-btn');
+      const tabItems = wrapper.querySelectorAll('.tab-item');
+      tabButtons.forEach((button, index) => {
+        button.addEventListener('click', function () {
+          showTabItem(wrapper, index);
+          setActiveTabButton(button, tabButtons);
+        });
+      });
+      // Показываем первый таб при загрузке страницы
+      showTabItem(wrapper, 0);
+      setActiveTabButton(tabButtons[0], tabButtons);
+    });
+  }
+
+  initializeTabs(tabWrappers);
+});
+
+

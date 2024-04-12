@@ -108,6 +108,14 @@
 @media (max-width: 600px) {
   .calculator-section {
 
+    .image-wrapper {
+      margin-left: 0;
+      img {
+        width: 375px;
+        max-width: unset;
+      }
+    }
+
     .h2 {
       margin-bottom: 16px;
     }
@@ -126,7 +134,8 @@
       display: none;
     }
     .image-wrapper-mobile {
-      display: block;
+      display: flex;
+      justify-content: center;
     }
     .form-control {
       display: flex;
