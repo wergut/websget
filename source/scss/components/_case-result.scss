@@ -58,3 +58,25 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .case-result {
+
+    .table-wrapper {
+      padding: 20px;
+    }
+
+    .result-diagram {
+      padding: 25px 35px;
+    }
+    .results-tags {
+      flex-wrap: wrap;
+      margin-top: 25px;
+
+      div + div {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+    }
+  }
+}

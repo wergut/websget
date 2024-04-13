@@ -5,3 +5,10 @@
     line-height: 28px;
   }
 }
+
+@media (max-width: 600px) {
+  .single-case-testimonial .testimonial-card .card-description p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

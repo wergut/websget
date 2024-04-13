@@ -7,7 +7,7 @@ body {
 }
 
 body:has(.header-transparent) {
-  
+
   main {
     padding-top: 0;
   }
@@ -515,6 +515,31 @@ section:has(.lines-background) {
         font-size: 14px;
         line-height: 17px;
       }
+    }
+  }
+
+  .table-wrapper {
+    padding: 20px;
+    .btn {
+      margin-top: 15px;
+      width: 100%;
+    }
+    table {
+      tr {
+        td {
+          padding: 8px 7px;
+          text-align: center;
+
+          &:nth-of-type(1) {
+            text-align: start;
+          }
+        }
+      }
+    }
+    .table-title {
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 10px;
     }
   }
 

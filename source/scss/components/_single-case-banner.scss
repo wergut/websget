@@ -111,3 +111,27 @@
     }
   }
 }
+
+
+@media (max-width: 600px) {
+  .single-case-banner {
+    padding-top: 105px;
+
+    .h1 {
+      margin-bottom: 24px;
+    }
+
+    .case-banner-cards .case-banner-card {
+      flex-wrap: wrap;
+
+      .banner-card-ico {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+    .case-banner-cards .case-banner-card:has(.banner-card-stats) .banner-card-wrapper {
+      flex-wrap: wrap;
+    }
+
+  }
+}
