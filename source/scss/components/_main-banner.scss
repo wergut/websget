@@ -343,6 +343,14 @@
 @media (max-width: 1024px) {
   .main-banner {
 
+    .banner-image-block-pc {
+      display: none;
+    }
+    .banner-image-block-tablet {
+      display: block;
+      margin-bottom: 40px;
+    }
+
     .form-wrapper {
       width: 100%;
     }
@@ -377,18 +385,16 @@
 
   }
 
-  .main-banner .banner-image-block .banner-image img {
-    max-width: 310px;
-  }
   .main-banner .banner-image-block .banner-image {
     margin-bottom: 0;
     margin-top: 80px;
   }
 
   .main-banner .banner-image-block .banner-content {
-    top: -50px;
+    top: 140px;
     right: 20px;
   }
+
 
 }
 
@@ -407,16 +413,13 @@
     margin-top: 0;
   }
 
+  .main-banner .banner-image-block-tablet {
+    margin-bottom: 0;
+  }
+
   .main-banner {
     padding-bottom: 60px;
     padding-top: 98px;
-
-    .banner-image-block-pc {
-      display: none;
-    }
-    .banner-image-block-tablet {
-      display: block;
-    }
 
     .subtitle {
       font-size: 12px;
